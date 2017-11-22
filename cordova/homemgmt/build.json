@@ -1,0 +1,18 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "../manage/security/keystore/keystore.jks",
+            "storePassword": "kamal123",
+            "alias": "hmskey",
+            "password" : "HMSKeyPa55",
+            "keystoreType": "jks"
+        },
+        "release": {
+            "keystore": "../manage/security/keystore/keystore.jks",
+            "storePassword": "kamal123",
+            "alias": "hmskey",
+            "password" : "HMSKeyPa55",
+            "keystoreType": "jks"
+        }
+    }
+}

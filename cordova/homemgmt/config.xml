@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.laxtech.homemgmt" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>HomeMgmt</name>
+    <description>
+        Home Management System helps in making your life easy. Home Management System can manage your day to day task list and grocery list.
+    </description>
+    <author email="ysanjeev@yahoo.com" href="https://homemgmt.herokuapp.com">
+        Sanjeev Tripathi
+    </author>
+    <content src="index.html" />
+    <access origin="https://homemgmt.herokuapp.com/*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <icon src="www/res/android/icon.png" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        
+        <icon density="ldpi" src="context/res/android/ldpi.png" />
+        <icon density="mdpi" src="context/res/android/mdpi.png" />
+        <icon density="hdpi" src="context/res/android/hdpi.png" />
+        <icon density="xhdpi" src="context/res/android/xhdpi.png" />
+        <icon density="xxhdpi" src="context/res/android/xxhdpi.png" />
+        <icon density="xxxhdpi" src="context/res/android/xxxhdpi.png" />
+        
+        <splash density="land-hdpi" src="context/res/screen/android/screen-hdpi-landscape.png" />
+        <splash density="land-ldpi" src="context/res/screen/android/screen-ldpi-landscape.png" />
+        <splash density="land-mdpi" src="context/res/screen/android/screen-mdpi-landscape.png" />
+        <splash density="land-xhdpi" src="context/res/screen/android/screen-xhdpi-landscape.png" />
+        <splash density="land-xxhdpi" src="context/res/screen/android/screen-xxhdpi-landscape.png" />
+        <splash density="land-xxxhdpi" src="context/res/screen/android/screen-xxxhdpi-landscape.png" />
+        
+	<splash density="port-hdpi" src="context/res/screen/android/screen-hdpi-portrait.png" />
+	<splash density="port-ldpi" src="context/res/screen/android/screen-ldpi-portrait.png" />
+	<splash density="port-mdpi" src="context/res/screen/android/screen-mdpi-portrait.png" />
+	<splash density="port-xhdpi" src="context/res/screen/android/screen-xhdpi-portrait.png" />
+	<splash density="port-xxhdpi" src="context/res/screen/android/screen-xxhdpi-portrait.png" />
+        <splash density="port-xxxhdpi" src="context/res/screen/android/screen-xxxhdpi-portrait.png" />
+    </platform>    
+    <platform name="ios">
+        <icon src="res/ios/home-50.png" />
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <preference name="SplashScreenDelay" value="500" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <plugin name="cordova-plugin-dialogs" spec="~1.3.1" />
+    <plugin name="cordova-plugin-network-information" spec="~1.3.1" />
+    <plugin name="cordova-plugin-console" spec="~1.0.5" />
+    <plugin name="cordova-plugin-splashscreen" spec="~4.0.1" />
+</widget>
