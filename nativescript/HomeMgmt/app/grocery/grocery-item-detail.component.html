@@ -1,0 +1,67 @@
+<ActionBar title="" class="action_bar"> 
+	<NavigationButton text="Go Back" android.systemIcon="ic_menu_back" (tap)="onNavBtnTap()"
+	class="action-image">
+	</NavigationButton> 
+	<StackLayout orientation="horizontal" ios:horizontalAlignment="center"  android:horizontalAlignment="center"> 
+		<Image src="res://icon" class="action-image"></Image> 
+		<Label text="HMS" class="action-label"></Label> 
+	</StackLayout> 
+</ActionBar>
+<StackLayout>
+	<!--     <h2>Update Grocery Item</h2>
+    
+    
+    <div class="container">
+    <h3>"{{groceryListItem.name}}"</h3>
+    <div class="form-group">  
+        <div class="row">
+			<div class="col-xs-12">
+			<label for="description">Description:  </label>
+				      <input class="form-control" id="description"  [(ngModel)]="groceryListItem.description" name="description" placeholder="description"/>
+			</div>
+				      
+    	</div>  
+	  	<div class="row">
+			<div class="col-md-1" >
+				      <label for="qty">Qty: </label>
+				      <input class="form-control" id="qty" [(ngModel)]="groceryListItem.qty" name="qty" type="number" placeholder="qty"/>
+			</div>
+			<div class="col-md-3">
+				      <label for="unit">Unit: </label>
+				      <input class="form-control" id="unit" [(ngModel)]="groceryListItem.unit" name="unit" placeholder="unit"/>
+			
+			</div>
+			<div class="col-md-3">
+			      <label >Purchased? <input class="form-control" type="checkbox" [checked]="groceryListItem.isPurchased" > </label>
+			</div>     
+	    </div>
+	    </div>
+    <p>
+      <button (click)="updateGroceryListItem()" class="btn btn-primary">Save and Go Back</button>
+    </p>
+    </div> -->
+    
+    <GridLayout rows="*" columns="*" style="background-color: lightyellow;">
+	    <ScrollView row="0" col="0">
+	        <GridLayout rows="*" columns="*">
+	            <StackLayout class="form">
+	                <StackLayout class="input-field">
+	                    <Label class="label"  text="Description:" row="1" col="0" textWrap="true"></Label>
+	                    <TextField class="input input-border" id="description"  [(ngModel)]="groceryListItem.description" hint="description"  returnKeyType="next" row="1" col="1"></TextField>
+	                </StackLayout>
+	                <StackLayout class="input-field">
+	                    <Label class="label" text="Qty:" row="2" col="0" textWrap="true"></Label>
+	                    <TextField class="input input-border"  [(ngModel)]="groceryListItem.qty" hint="qty"  returnKeyType="next" row="2" col="1"></TextField>
+	                    <Label class="label" text="Unit:" row="3" col="0" textWrap="true"></Label>
+	                    <TextField class="input input-border" id="unit"  [(ngModel)]="groceryListItem.unit" hint="unit"  returnKeyType="next" row="3" col="1"></TextField>
+	                    <Label class="label" text="Purchased?" row="4" col="0" textWrap="true"></Label>
+	                    <TextField class="input input-border" [(ngModel)]="groceryListItem.isPurchased"  returnKeyType="next"row="4" col="1"></TextField>                    
+	                </StackLayout>
+	                <StackLayout backgroundColor="white" row="5" col="1">
+	        			<Button class="btn btn-primary btn-active" text="Save and Go Back" (tap)="updateGroceryListItem()" [visibility]="true ? 'visible' : 'collapsed'"></Button>
+	                </StackLayout>
+	    		</StackLayout>
+			</GridLayout>
+		</ScrollView>	
+	</GridLayout>
+</StackLayout>

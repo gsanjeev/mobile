@@ -1,0 +1,25 @@
+<ActionBar title="" class="action_bar"> 
+	<NavigationButton text="Go Back" android.systemIcon="ic_menu_back" (tap)="onNavBtnTap()"
+	class="action-image">
+	</NavigationButton> 
+	<StackLayout orientation="horizontal" ios:horizontalAlignment="center"  android:horizontalAlignment="center"> 
+		<Image src="res://icon" class="action-image"></Image> 
+		<Label text="HMS" class="action-label"></Label> 
+	</StackLayout> 
+</ActionBar>
+<StackLayout> 
+    <StackLayout> 
+        <Label class="h4 header" textWrap="true"
+        text="Welcome to the Home Management System.">
+        </Label>        
+    </StackLayout>  
+	<StackLayout >
+		<Button text="Tasks" [nsRouterLink]="['/task-list']" *ngIf="auth.authenticated()" class="link"></Button>
+		<Button text="Grocery" [nsRouterLink]="['/grocery-list']" *ngIf="auth.authenticated()" class="link"></Button>
+		<Button text="Cooking Videos" [nsRouterLink]="['/cooking-video']" *ngIf="auth.authenticated()" class="link"></Button>
+		<Button text="Log In"  (tap)="auth.login()" *ngIf="!auth.authenticated()"  class="link">
+        </Button>
+        <Button text="Log Out"  (tap)="auth.logout()" *ngIf="auth.authenticated()"  class="link">
+        </Button>
+	</StackLayout> 
+</StackLayout>

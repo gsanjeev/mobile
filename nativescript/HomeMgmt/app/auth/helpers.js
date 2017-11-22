@@ -1,0 +1,12 @@
+"use strict";
+var auth0Module = require("nativescript-auth0");
+var auth_config_1 = require("./auth.config");
+//Single point of entry to get the Lock object, only have to set the keys once
+function getAuthLock() {
+    return new auth0Module.Auth0Lock({
+        clientId: auth_config_1.myConfig.clientID,
+        domain: auth_config_1.myConfig.domain
+    });
+}
+exports.getAuthLock = getAuthLock;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaGVscGVycy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImhlbHBlcnMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLGdEQUFrRDtBQUNsRCw2Q0FBeUM7QUFFekMsOEVBQThFO0FBQzlFO0lBQ0ksTUFBTSxDQUFDLElBQUksV0FBVyxDQUFDLFNBQVMsQ0FBQztRQUM3QixRQUFRLEVBQUUsc0JBQVEsQ0FBQyxRQUFRO1FBQzNCLE1BQU0sRUFBQyxzQkFBUSxDQUFDLE1BQU07S0FFekIsQ0FBQyxDQUFDO0FBQ1AsQ0FBQztBQU5ELGtDQU1DIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICogYXMgYXV0aDBNb2R1bGUgZnJvbSBcIm5hdGl2ZXNjcmlwdC1hdXRoMFwiO1xyXG5pbXBvcnQgeyBteUNvbmZpZyB9IGZyb20gJy4vYXV0aC5jb25maWcnO1xyXG5cclxuLy9TaW5nbGUgcG9pbnQgb2YgZW50cnkgdG8gZ2V0IHRoZSBMb2NrIG9iamVjdCwgb25seSBoYXZlIHRvIHNldCB0aGUga2V5cyBvbmNlXHJcbmV4cG9ydCBmdW5jdGlvbiBnZXRBdXRoTG9jaygpOiBhdXRoME1vZHVsZS5BdXRoMExvY2t7XHJcbiAgICByZXR1cm4gbmV3IGF1dGgwTW9kdWxlLkF1dGgwTG9jayh7IFxyXG4gICAgICAgIGNsaWVudElkOiBteUNvbmZpZy5jbGllbnRJRCxcclxuICAgICAgICBkb21haW46bXlDb25maWcuZG9tYWluXHJcbiAgICAgICAgXHJcbiAgICB9KTtcclxufSJdfQ==

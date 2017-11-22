@@ -1,0 +1,114 @@
+<ActionBar title="" class="action_bar"> 
+	<NavigationButton text="Go Back" android.systemIcon="ic_menu_back" (tap)="onNavBtnTap()"
+	class="action-image">
+	</NavigationButton> 
+	<StackLayout orientation="horizontal" ios:horizontalAlignment="center"  android:horizontalAlignment="center"> 
+		<Image src="res://icon" class="action-image"></Image> 
+		<Label text="HMS" class="action-label"></Label> 
+	</StackLayout> 
+</ActionBar>
+<StackLayout> 
+	<!-- <div class="well well-sm">
+		<div class="form-group">
+			<input type="search" class="form-control" [formControl]="search"
+				placeholder="Search Cooking Videos">
+		</div>
+	</div>
+	<div class="table-responsive  pre-scrollable">
+		<table class="table table-striped table-condensed">
+			<tr *ngFor="let video of seachResults | videoFilter; let i = index"
+				class="Table-row">
+				<td class="col-md-1"><a href="https://youtu.be/{{video.id.videoId}}"> 
+				<span class="badge">{{i+1}}</span></a></td>
+				<td class="col-md-2"><a href="https://youtu.be/{{video.id.videoId}}">
+				<img class="img-thumbnail thumb"
+						[src]="video.snippet.thumbnails.default.url" /></a></td>
+				<td class="col-md-9"><a href="https://youtu.be/{{video.id.videoId}}"> 
+				{{video.snippet.title}}</a></td>
+			</tr>
+		</table>
+	</div> -->
+	
+	<GridLayout #container
+	  rows="auto, auto, *">
+	
+	  <!-- Row 1: The custom action bar -->
+	  <GridLayout
+	    row="0"
+	    columns="40, *, auto"
+	    class="page-header">
+	    <Label
+	      col="1"
+	      text="COOKING VIDEOS"></Label>
+	    
+	    <!-- Wrap the image in a StackLayout to give it a bigger tap target -->
+	    <StackLayout
+	      col="2"
+	      (tap)="showMenu()" >
+	      <Image
+	        src="res://menu"
+	        stretch="none" class ="small-spacing"
+	        ></Image>        
+	    </StackLayout>
+	  </GridLayout>
+	  <!-- Row 2: The text field to add groceries, and recent button -->
+	  <GridLayout
+	    row="1"
+	    columns="*"
+	    [backgroundColor]="'GhostWhite'" 
+	    class="add-bar">
+	<!--     <SearchBar #searchTextField
+	      col="0"
+	      [(ngModel)] = "search" (ngModelChange)="onSearchChanged($event)"
+	      [hint]="isAndroid ? 'SEARCH COOKING VIDEOS...' : 'Search cooking videos'"
+	      returnKeyType="done"></SearchBar> -->
+	    <SearchBar #searchTextField height="35" class="searchbar"
+	    [hint]="isAndroid ? 'SEARCH COOKING VIDEOS...' : 'Search cooking videos'"
+	          [(ngModel)] = "search" (loaded)="onSearchBarLoaded($event)" 
+	          (clear)="onClear($event)" (submit)="onSearchChanged($event)"></SearchBar>
+	  </GridLayout>
+	
+	  <!-- Row 3: The grocery list -->  
+	 <ListView
+	  [row]="2"
+	  class="small-spacing" 
+	  [class.visible]="listLoaded"
+	  [items]="seachResults"
+	  (loading)="showActivityIndicator()"
+	  (loaded)="hideActivityIndicator()" 
+	  >
+	  <template let-item="item" let-i="index" let-odd="odd" let-even="even">
+	    <GridLayout
+	      columns="auto, auto, *"
+	      class="container"   [class.odd]="odd" [class.even]="even"
+	      [opacity]="item.isDone ? '0.8' : '1'">
+	      <!-- Wrap in containers for bigger tap targets -->
+	      <GridLayout col="0" class="row-header">
+	        <StackLayout >
+	        <Label col="0" 
+	          [text]="i+1+'.'" (tap)="openCookingVideo(item.id.videoId)"> </Label>
+	          </StackLayout>
+	          </GridLayout>
+	          <GridLayout col="1" class="delete-container">
+	        <StackLayout >
+	        <Image col="1"
+	          src="{{item.snippet.thumbnails.default.url}}"
+	          class="img-thumbnail thumb" (tap)="openCookingVideo(item.id.videoId)"></Image>  
+	          </StackLayout>
+	          </GridLayout>
+	          <GridLayout col="2" class="delete-container">
+	        <StackLayout >
+	        <Label col="2"
+	          [text]="item.snippet.title" textWrap="true" (tap)="openCookingVideo(item.id.videoId)"> </Label>
+	          </StackLayout>
+	          </GridLayout>
+	    </GridLayout>
+	  </template>
+	</ListView>   
+	
+	  <ActivityIndicator
+	    [busy]="!listLoaded"
+	    row="2"></ActivityIndicator>
+	
+	</GridLayout>
+<StackLayout> 

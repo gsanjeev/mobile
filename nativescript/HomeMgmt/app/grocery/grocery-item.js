@@ -1,0 +1,8 @@
+"use strict";
+var GroceryItem = (function () {
+    function GroceryItem() {
+    }
+    return GroceryItem;
+}());
+exports.GroceryItem = GroceryItem;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ3JvY2VyeS1pdGVtLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiZ3JvY2VyeS1pdGVtLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQTtJQUFBO0lBUUEsQ0FBQztJQUFELGtCQUFDO0FBQUQsQ0FBQyxBQVJELElBUUM7QUFSWSxrQ0FBVyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjbGFzcyBHcm9jZXJ5SXRlbSB7XHJcbiAgICBuYW1lOiBzdHJpbmc7XHJcbiAgICBkZXNjcmlwdGlvbjogc3RyaW5nO1xyXG4gICAgcXR5OiBudW1iZXI7XHJcbiAgICB1bml0OiBzdHJpbmc7XHJcbiAgICB1c2VyOiBzdHJpbmc7XHJcbiAgICBpc1B1cmNoYXNlZDogYm9vbGVhbjtcclxuICAgIF9pZDogc3RyaW5nO1xyXG59Il19

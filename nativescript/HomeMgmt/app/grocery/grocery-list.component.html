@@ -1,0 +1,126 @@
+<ActionBar title="" class="action_bar"> 
+	<NavigationButton text="Go Back" android.systemIcon="ic_menu_back" (tap)="onNavBtnTap()"
+	class="action-image">
+	</NavigationButton> 
+	<StackLayout orientation="horizontal" ios:horizontalAlignment="center"  android:horizontalAlignment="center"> 
+		<Image src="res://icon" class="action-image"></Image> 
+		<Label text="HMS" class="action-label"></Label> 
+	</StackLayout> 
+</ActionBar>
+<StackLayout>
+	<GridLayout #container
+	  rows="auto, auto, *">
+	
+	  <!-- Row 1: The custom action bar -->
+	  <GridLayout
+	    row="0"
+	    columns="40, *, auto"
+	    class="page-header">
+	    <Label
+	      col="1"
+	      text="GROCERY LIST"></Label>
+	    
+	    <!-- Wrap the image in a StackLayout to give it a bigger tap target -->
+	    <StackLayout
+	      col="2"
+	      (tap)="showMenu()" >
+	      <Image
+	        src="res://menu"
+	        stretch="none" class ="small-spacing"
+	        ></Image>        
+	    </StackLayout>
+	  </GridLayout>
+	  <!-- Row 2: The text field to add groceries, and recent button -->
+	  <GridLayout
+	    row="1"
+	    columns="*, auto, auto"
+	    [backgroundColor]="'GhostWhite'" 
+	 	class="form add-bar m-0 p-0">
+	 	    //<!-- class="add-bar"> -->
+	 	
+			<!-- <StackLayout col="0">
+			//<Label text="{{ groceryItems ? 'Selected item: ' + groceryItems[groceryItemSelectedIndex] : 'Open' }}" (tag)="openGroceryItemPicker()"></Label> -->
+	<!--  		<Label col="0" #groceryItemPickerLabel text="Open" (tap)="openGroceryItemPicker()" visibility="visible"></Label>
+			<ListPicker col="0" #groceryItemPicker id="groceryItemPickerId" class="groceryItemPicker" visibility="collapsed"
+			                [items]="groceryItems" [selectedIndex]="groceryItemSelectedIndex" 
+			                (selectedIndexChange)="groceryItemIndexChanged(groceryItemPicker)">
+			</ListPicker> 
+			</StackLayout>
+			 -->
+			 <StackLayout col="0" 
+	      class="dropdown-border">
+			<DropDown col="0"  #groceryItemPicker id="groceryItemPickerId" class="drop-down-menu p-r-0 m-r-0 m-y-auto input-border"
+	                [items]="groceryItems" [selectedIndex]="groceryItemSelectedIndex" 
+	                [hint]="'Select Grocery Item'" 
+	                (selectedIndexChange)="groceryItemIndexChanged(groceryItemPicker)">
+			</DropDown>
+			 </StackLayout>
+	<!-- 	<DropDown #dd backroundColor="red" [items]="items" [selectedIndex]="selectedIndex" 
+	                  (selectedIndexChanged)="onchange($event)" (opened)="onopen()"
+	                  row="0" colSpan="2">
+	        </DropDown> -->
+	    <TextField #qtyTextField col="1" 
+	      [(ngModel)] = "newGroceryListItem.qty" 
+	      [hint]="isAndroid ? 'QTY' : 'Qty'"
+	      returnKeyType="done" 
+	      (returnPress)="addGroceryListItem('qtyTextfield')" verticalAlignment="middle" 
+	       ></TextField>
+	<StackLayout col="2" 
+	      class="add-bar-image-container p-0 m-0"
+	      (tap)="addGroceryListItem('button')">
+	      <Image
+	        src="res://add"></Image>
+	    </StackLayout>
+	  </GridLayout>
+	<!-- Row 2: The text field to add groceries, and recent button -->
+	  <!-- Row 3: The grocery list -->  
+	 <ListView
+	  [row]="2"
+	  class="small-spacing" 
+	  [class.visible]="listLoaded"
+	  [items]="groceryList"  
+	  (loading)="showActivityIndicator()"
+	  (loaded)="hideActivityIndicator()" 
+	  >
+	  <template let-item="item" let-i="index" let-odd="odd" let-even="even">
+	    <GridLayout
+	      columns="auto, *, auto, auto"
+	      class="container"   [class.odd]="old" [class.even]="even"
+	      [opacity]="item.isDone ? '0.8' : '1'">
+	      <!-- Wrap in containers for bigger tap targets -->
+			<GridLayout col="0" class="row-header">
+	        <StackLayout >
+	        <Label col="0"
+	          [text]="i+1+'.'" (tap)="onSelect(item)" > </Label>
+	          </StackLayout>
+	          </GridLayout>
+	          <GridLayout col="1" class="delete-container">
+	        <StackLayout >
+	        <Label col="1"
+	          [text]="item.name" textWrap="true" (tap)="onSelect(item)"> </Label>
+	          </StackLayout>
+	          </GridLayout>
+	          <GridLayout col="2" class="delete-container">
+	        <StackLayout >
+	        <Label col="2"
+	          [text]="item.qty"> </Label>
+	          </StackLayout>
+	          </GridLayout>
+	      <GridLayout
+	        col="3"
+	        class="delete-container"
+	        (tap)="deleteGroceryListItem(item._id)">
+	        <StackLayout>
+	          <Image src="res://delete"></Image>
+	        </StackLayout>
+	      </GridLayout>
+	    </GridLayout>
+	  </template>
+	</ListView>   
+	
+	  <ActivityIndicator
+	    [busy]="!listLoaded"
+	    row="2"></ActivityIndicator>
+	
+	</GridLayout>
+</StackLayout>

@@ -1,0 +1,8 @@
+.groceryItemPicker {
+  top: -100;
+  left:0;
+  width:100%;
+  border-width: 2;
+  border-style: solid;
+  border-color: blue;
+}

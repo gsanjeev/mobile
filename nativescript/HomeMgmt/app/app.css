@@ -1,0 +1,287 @@
+@import "nativescript-theme-core/css/core.light.css";
+
+.title {
+    font-size: 30;
+    margin: 16;
+}
+
+.nav {
+    orientation: vertical;
+    vertical-align: center;
+      padding: 2;
+    background-color: lightblue;
+    border-style: solid;
+    border-width: 2;
+  	border-color: orange;
+    font-size: 10;
+}
+
+.page-header {
+    orientation: horizontal;
+    horizontal-align: stretch;
+    vertical-align: center;
+    padding-left: 5;
+    padding-right: 5;
+    background-color: SteelBlue;
+    border-style: solid;
+    border-width: 2;
+  	border-color: yellow;
+    height: 25;
+    font-size: 15;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.button {
+    width: 60;    
+    margin-top: 2;
+    margin-bottom: 2;
+  	margin-left: 2;
+  	margin-right: 2;
+    padding: 1;
+    background-color: lightgray;
+    border-style: solid;
+    border-width: 1;
+  	border-color: blue;
+  	border-radius: 4;
+  	color: blue;
+}
+
+.action_bar {
+	height: 30;
+}
+
+.button_long {
+    width: 100;
+    margin-top: 2;
+    margin-bottom: 2;
+  	margin-left: 2;
+  	margin-right: 2;
+    padding: 1;
+    background-color: lightgray;
+    border-style: solid;
+    border-width: 1;
+  	border-color: blue;
+  	border-radius: 4;
+  	color: blue;
+}
+
+.link {
+    margin: 10 30;
+}
+
+.action-image {
+    width: 40;
+    height: 40;
+    vertical-align: center;
+}
+
+.action-label {
+    color: #3C5AFD;
+    font-size: 20;
+    font-weight: bold;
+    vertical-align: center;
+}
+
+.action-bar-custom {
+  color: white;
+  margin-top: 26;
+  margin-bottom: 16;
+}
+.action-bar-custom Label {
+  font-size: 21;
+  font-weight: bold;
+}
+.action-bar-custom StackLayout {
+  height: 40;
+  padding-left: 15;
+  padding-right: 15;
+  vertical-align: center;
+  horizontal-align: center;
+}
+
+.add-bar {
+  background-color: #CB1D00;
+  border-style: solid;
+  border-width: 2;
+  border-color: lightgreen;
+  vertical-align: center;
+  padding-left: 2;
+  padding-right: 2;
+  height: 40;
+}
+.add-bar-image-container {
+  height: 20;
+  vertical-align: center;
+  margin-left: 2;
+  padding-left: 2;
+  padding-right: 2;
+}
+.add-bar Image {
+  height: 20;
+}
+ TextField {
+  color: black;
+  placeholder-color: gray;
+  background-color: transparent;
+  font-size: 15;
+  border-radius: 4;
+  border-width: 1;
+  border-color: gray;
+  padding: 4;
+    margin-top: 2;
+    margin-bottom: 2;
+  margin-left: 2;
+    vertical-align: center;
+    height:30;
+} 
+ListPicker {
+  color: black;
+  placeholder-color: gray;
+  background-color: transparent;
+  font-size: 15;
+  border-radius: 4;
+  border-width: 1;
+  padding: 2;
+    margin-top: 2;
+    margin-bottom: 2;
+  margin-left: 2;
+    vertical-align: center;
+  
+}
+Label {
+  //color: black;
+  //font-size: 15;
+  //font-weight: bold;
+  vertical-align: middle;
+}
+
+.add-bar-recent-label {
+  vertical-align: center;
+  color: #311217;
+}
+.add-bar-recent-container {
+  height: 50;
+  padding-left: 10;
+  padding-right: 10;
+  margin-right: -10;
+  vertical-align: center;
+}
+.add-bar-recent-toggle {
+  color: #311217;
+}
+
+ActivityIndicator {
+  horizontal-align: center;
+  vertical-align: center;
+}
+
+ListView {
+  background-color: transparent;
+  opacity: 0;
+}
+.visible {
+  animation-name: show;
+  animation-duration: 1s;
+}
+@keyframes show {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.container {
+  background-color: white;
+  margin-top: 1;
+}
+.tap-target {
+  padding-top: 13;
+  padding-bottom: 13;
+  padding-left: 16;
+}
+.tap-target Label {
+  min-width: 200;
+}
+.check-box {
+  margin-right: 5;
+  height: 20;
+  vertical-align: middle;
+}
+.delete-container {
+  padding: 0 0;
+  vertical-align: middle;
+}
+.delete-container StackLayout {
+  padding: 5;
+}
+.delete-container Image {
+  height: 20;
+}
+.small-spacing {
+  margin: 2;
+}
+.medium-spacing {
+  margin: 10;
+}
+.odd {
+    background-color: PowderBlue;
+}
+
+.even {
+    background-color: #fafad2;
+}
+.img-thumbnail {
+    border-radius: 50%;
+    padding: 0px;
+    width: 50px;
+    vertical-align: middle;
+}
+.row-header {
+  //color: black;
+  //font-size: 15;
+  font-weight: bold;
+  vertical-align: middle;
+}
+.searchbar {
+  //border-radius: 4;
+  //border-width: 2; 
+  border-bottom-width: 2;
+  border-style: solid;
+  border-color: red;
+}
+.item-list {
+  //color: black;
+ placeholder-color: gray;
+  //background-color: transparent;
+  font-size: 15;
+  border-radius: 4;
+  border-width: 1;
+  padding: 2;
+    margin-top: 2;
+    margin-bottom: 2;
+  margin-left: 2;
+  margin-right: 18;
+    vertical-align: center;
+}
+.dropdown-border {
+    horizontal-align: center;
+    vertical-align: center;
+    padding-left: 2;
+    padding-right: 0;
+    margin-left: 0;
+  	margin-right: 0;
+    border-style: solid;
+    border-width: 1;
+  	border-color: gray;
+  	border-radius: 4;
+  	height:30;
+}
+.badge1 {
+   font-size:.7em;
+   background:green;
+   color:white;
+   width:18px;height:18px;
+   text-align:center;
+   line-height:18px;
+   border-radius:50%;
+   box-shadow:0 0 1px #333;
+}
